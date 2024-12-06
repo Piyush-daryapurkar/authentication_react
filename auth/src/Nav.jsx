@@ -7,28 +7,20 @@ const Nav = () => {
   <>
     <div>
       <nav>
-        <div className="logo">
+        <div className="main">
           <div className="menu">
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-        
-          </ul>
+          <ul><li><Link className='link' to="/">Home</Link></li></ul>
+          <ul><li><Link className='link' to="">About</Link></li></ul>
 
-          <ul>
-            <li>
-            <Link to="/signup">Signup</Link>
-            </li>
-        
-          </ul>
+          <ul><li><Link className='link' to="">Contact</Link></li></ul>
 
-          <ul>
-            <li>
-            <Link to="/login">Login</Link>
-            </li>
-        
-          </ul>
+          <ul><li><Link className='link' to="">Help</Link></li></ul>
+
+
+          <ul><li><Link className='link'  to="/signup">Signup</Link></li></ul>
+
+          
+
           </div>
 
         </div>
