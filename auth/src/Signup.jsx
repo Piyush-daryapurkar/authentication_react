@@ -29,9 +29,15 @@ function Singup() {
   }
   
 localStorage.setItem("user_data",JSON.stringify(data))
+
+
   const navigate=useNavigate();
   const Signup=()=>{
       navigate('/login')
+  }
+
+  function remove_data(index){
+    setdata(data.filter((_,i)=>i!==index))
   }
 
   
@@ -43,17 +49,7 @@ localStorage.setItem("user_data",JSON.stringify(data))
 
 
       <h1 className='heading1'>Sing Up Page</h1>
-      <ul>
-       
-       {data.map((i)=>(
-         <>
-         data<h1>{i.name}</h1>
-         <h1>{i.email}</h1>
-         <h1>{i.password}</h1>
-         <h1>{i.mobile}</h1>
-         </>
-       ))}
-     </ul>
+  
 
      <form action="">
         
@@ -64,6 +60,21 @@ localStorage.setItem("user_data",JSON.stringify(data))
         
         <button onClick={Signup}>Signup</button>
         <button onClick={add_data}>add user</button>
+
+        <ul>
+       
+       {data.map((i,index)=>(
+         <>
+         <br></br>
+         <mark>data</mark>
+         <h1>:~{i.name}</h1>
+         <h1>{i.email}</h1>
+         <h1>{i.password}</h1>
+         <h1>{i.mobile}</h1>
+         <button onClick={()=> remove_data(index)}>remove</button><br /><br></br><hr />
+         </>
+       ))}
+     </ul>
 
     </form>
 

@@ -1,10 +1,18 @@
 import React from 'react'
-import './Signup.css'
+// import './Signup.css'
 
 
 const Login=()=> {
+  const login_data=JSON.parse(localStorage.getItem("user_data"))
+  
   return (
     <>
+    {login_data.map((i)=(
+      <>
+      <h1>{i.name}</h1>
+      </>
+    ))
+  }
     <div className='boss'>
 
         <div className="sign">
@@ -19,6 +27,8 @@ const Login=()=> {
           Password:<br></br> <input type="password" name='pass1'  placeholder='Enter Your Password'/>
           </label><br></br>
           <button >Login</button>
+
+          
 
 
         </div>
